@@ -1,7 +1,16 @@
 import * as fs from "fs";
 import * as inquirer from "inquirer";
 
-const choices = ["Scala", "TypeScript"];
+let choices: Array<String>;
+
+try {
+  choices = fs.readdirSync(`${__dirname}/../templates`);
+} catch (e) {
+  console.log("Error: Failed to Getting Templates");
+  console.log(e);
+  process.exit(1);
+}
+
 const currentWorkingDir = process.cwd();
 
 console.log(`Start: Creating ${currentWorkingDir}/.gitignore`);
@@ -16,12 +25,12 @@ inquirer
     },
   ])
   .then(({ template }) => {
-    let text;
+    let text: Buffer;
 
     try {
       text = fs.readFileSync(`${__dirname}/../templates/${template}`);
     } catch (e) {
-      console.log("Error: Failed to Reading a File");
+      console.log("Error: Failed to Reading a Template");
       console.log(e);
       process.exit(1);
     }

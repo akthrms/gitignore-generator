@@ -9,7 +9,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const inquirer = __importStar(require("inquirer"));
-const choices = ["Scala", "TypeScript"];
+let choices;
+try {
+    choices = fs.readdirSync(`${__dirname}/../templates`);
+}
+catch (e) {
+    console.log("Error: Failed to Getting Templates");
+    console.log(e);
+    process.exit(1);
+}
 const currentWorkingDir = process.cwd();
 console.log(`Start: Creating ${currentWorkingDir}/.gitignore`);
 inquirer
@@ -27,7 +35,7 @@ inquirer
         text = fs.readFileSync(`${__dirname}/../templates/${template}`);
     }
     catch (e) {
-        console.log("Error: Failed to Reading a File");
+        console.log("Error: Failed to Reading a Template");
         console.log(e);
         process.exit(1);
     }
