@@ -7,3 +7,8 @@
 ```sh
 $ node path/to/gitignore-generator/dist/index.js
 ```
+
+## 対応済み
+
+* Scala
+* TypeScript
