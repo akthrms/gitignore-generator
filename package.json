@@ -10,7 +10,7 @@
     "@types/node": "13.13.9",
     "jest": "26.0.1",
     "ts-jest": "26.0.0",
-    "ts-node": "8.10.1",
+    "ts-node": "8.10.2",
     "typescript": "3.9.3"
   },
   "scripts": {
