@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/inquirer": "7.3.1",
     "@types/jest": "26.0.13",
-    "@types/node": "13.13.19",
+    "@types/node": "13.13.20",
     "jest": "26.4.2",
     "ts-jest": "26.3.0",
     "ts-node": "9.0.0",
