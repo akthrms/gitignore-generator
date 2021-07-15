@@ -10,5 +10,9 @@ $ node path/to/gitignore-generator/dist/index.js
 
 ## 対応済み
 
+* Clojure
+* Haskell
+* Ocaml
+* Rust
 * Scala
 * TypeScript
